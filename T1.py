@@ -14,11 +14,10 @@ y0_0 = 1.0
 y1_0 = 1.0
 
 y0 = [y0_0, y1_0]
-y = [0.0, 0,0]
 
 # function that returns dy/dt
 def model(y,t):
-    dydt_1 = -1/(R*C)*y + 1/(R*C)*u
+    dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u
     dydt_2 = 0
     return [dydt_1, dydt_2]
 
