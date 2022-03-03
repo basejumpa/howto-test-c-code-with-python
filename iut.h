@@ -8,5 +8,6 @@ void init(void);
 void step(void);
 
 double f_u(double t);
+int mode(double t);
 
 #endif /* pt1_h */

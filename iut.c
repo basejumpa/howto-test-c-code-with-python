@@ -26,3 +26,12 @@ double f_u(double t){
     else
         return 1.0;
 }
+
+int mode(double t){
+    if(t < 3.0)
+        return 0;
+    else if(t < 6.0)
+        return 1;
+    else
+        return 2;
+}

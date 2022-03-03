@@ -21,11 +21,30 @@ def u(t):
     else:
         return 1.0
 
-# function that returns dy/dt
-def model(y,t):
+def circuit_A(y, t):
     dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
     dydt_2 = iut.f_u(t)
     return [dydt_1, dydt_2]
+
+def circuit_B(y, t):
+    dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
+    dydt_2 = iut.f_u(t)
+    return [dydt_1, dydt_2]
+
+def circuit_C(y, t):
+    dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
+    dydt_2 = iut.f_u(t)
+    return [dydt_1, dydt_2]
+
+# function that returns dy/dt
+def model(y,t):
+    mode = iut.mode(t)
+    if mode == 0:
+        return circuit_C(y, t)
+    elif mode == 1:
+        return circuit_A(y, t)
+    else:
+        return circuit_B(y, t)
 
 
 # time points
