@@ -1,21 +1,21 @@
 .SUFFIXES:
 
 .PHONY: default
-default: _pt1.pyd
+default: _iut.pyd
 
 .PHONY: test
-test: main.py _pt1.pyd
+test: main.py _iut.pyd
 	python $(<)
 
-_pt1.pyd: pt1.o pt1_wrap.o
+_iut.pyd: iut.o iut_wrap.o
 	gcc -shared -o $(@) $(^) -lPython310 -L$(USERPROFILE)\scoop\apps\python\current\libs
 
-pt1.o pt1_wrap.o: pt1.c pt1_wrap.c
-	gcc -fPIC -c pt1.c pt1_wrap.c -I$(USERPROFILE)\scoop\apps\python\current\include
+iut.o iut_wrap.o: iut.c iut_wrap.c
+	gcc -fPIC -c iut.c iut_wrap.c -I$(USERPROFILE)\scoop\apps\python\current\include
 
-pt1_wrap.c pt1.py: pt1.swig pt1.h 
+iut_wrap.c iut.py: iut.swig iut.h 
 	swig -python $(<)
 
 .PHONY: clean
 clean:
-	rm -rf pt1_wrap.c pt1_wrap.o pt1.o pt1.py _pt1.pyd __pycache__
+	rm -rf iut_wrap.c iut_wrap.o iut.o iut.py _iut.pyd __pycache__

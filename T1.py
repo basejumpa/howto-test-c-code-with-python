@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
-import pt1
+import iut
 
 
 ## Circuit T_1
@@ -24,7 +24,7 @@ def u(t):
 # function that returns dy/dt
 def model(y,t):
     dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
-    dydt_2 = pt1.f_u(t)
+    dydt_2 = iut.f_u(t)
     return [dydt_1, dydt_2]
 
 
