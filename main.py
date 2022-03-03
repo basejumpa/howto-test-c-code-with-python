@@ -1,5 +1,4 @@
-
-import matplotlib.pyplot as plt
+gitimport matplotlib.pyplot as plt
 import pt1
 
 if __name__ == "__main__":
