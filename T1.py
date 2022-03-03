@@ -22,12 +22,12 @@ def u(t):
         return 1.0
 
 def circuit_A(y, t):
-    dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
+    dydt_1 = 0
     dydt_2 = iut.f_u(t)
     return [dydt_1, dydt_2]
 
 def circuit_B(y, t):
-    dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
+    dydt_1 = -1/(R*C)*y[0]
     dydt_2 = iut.f_u(t)
     return [dydt_1, dydt_2]
 
@@ -48,7 +48,7 @@ def model(y,t):
 
 
 # time points
-t = np.arange(0, 10, 0.1)
+t = np.arange(0, 20, 0.1)
 
 # solve ODE
 y = odeint(model,y0,t)

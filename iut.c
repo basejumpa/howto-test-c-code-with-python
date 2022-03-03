@@ -32,6 +32,8 @@ int mode(double t){
         return 0;
     else if(t < 6.0)
         return 1;
-    else
+    else if(t < 10.0)
         return 2;
+    else
+        return 0;
 }
