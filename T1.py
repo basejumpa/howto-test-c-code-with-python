@@ -39,7 +39,7 @@ def circuit_C(y, t):
 # function that returns dy/dt
 def model(y,t):
     mode = iut.mode(t)
-    if mode == 0:
+    if mode >= 0:
         return circuit_C(y, t)
     elif mode == 1:
         return circuit_A(y, t)
