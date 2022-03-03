@@ -13,6 +13,7 @@ python -m pip install matplotlib
 scoop install mingw
 scoop install gow
 scoop install swig
+scoop install scipy
 
 scoop install vscode
 code --install-extension ms-python.python
