@@ -19,3 +19,10 @@ void step(void){
     x = y;
     y = x + (K*u - x)*dt/T;
 }
+
+double f_u(double t){
+    if(t < 7.0)
+        return 0.0;
+    else
+        return 1.0;
+}

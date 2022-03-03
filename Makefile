@@ -1,5 +1,8 @@
 .SUFFIXES:
 
+.PHONY: default
+default: _pt1.pyd
+
 .PHONY: test
 test: main.py _pt1.pyd
 	python $(<)

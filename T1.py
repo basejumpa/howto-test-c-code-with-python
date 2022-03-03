@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
+import pt1
 
 
 ## Circuit T_1
@@ -23,7 +24,7 @@ def u(t):
 # function that returns dy/dt
 def model(y,t):
     dydt_1 = -1/(R*C)*y[0] + 1/(R*C)*u(t)
-    dydt_2 = 0
+    dydt_2 = pt1.f_u(t)
     return [dydt_1, dydt_2]
 
 
@@ -38,7 +39,12 @@ print(t)
 print(y)
 
 # plot results
-plt.plot(t,y, '.')
-plt.xlabel('time')
-plt.ylabel('y(t)')
+
+fig, axs = plt.subplots(2)
+fig.suptitle('Vertically stacked subplots')
+
+axs[0].plot(t,y[:,0], '.')
+axs[1].plot(t,y[:,1], '.')
+
+
 plt.show()
