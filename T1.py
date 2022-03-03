@@ -58,7 +58,6 @@ print(t)
 print(y)
 
 # plot results
-
 fig, axs = plt.subplots(2)
 fig.suptitle('Vertically stacked subplots')
 
