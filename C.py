@@ -1,7 +1,7 @@
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 
-y0 = [1.0]
+y0 = [0.0]
 
 def func(t, y):
     return [1.0]
