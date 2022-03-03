@@ -2,16 +2,24 @@ import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
-# function that returns dy/dt
-def model(y,t):
-    dydt = 1
-    return dydt
+
+## Circuit T_1
+
+R=1.0
+C=1.0
+u=0.0
 
 # initial condition
 y0 = 1.0
 
+# function that returns dy/dt
+def model(y,t):
+    dydt = -1/(R*C)*y + 1/(R*C)*u
+    return dydt
+
+
 # time points
-t = np.arange(0, 10, 1)
+t = np.arange(0, 10, 0.1)
 
 # solve ODE
 y = odeint(model,y0,t)
