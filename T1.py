@@ -15,7 +15,10 @@ y1_0 = 1.0
 y0 = [y0_0, y1_0]
 
 def u(t):
-    return 0.0
+    if t < 5:
+        return 0.0
+    else:
+        return 1.0
 
 # function that returns dy/dt
 def model(y,t):
